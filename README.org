@@ -4,8 +4,9 @@
 
 ** Table of Contents
  - [[#search_wiki][search_wiki]]
-     - [[#install-for-developers][Install for developers]]
-     - [[#setup-configyml][Setup config.yml]]
+   - [[#install-for-developers][Install for developers]]
+   - [[#setup-configyml][Setup config.yml]]
+   - [[#usage][Usage]]
 
 ** Install for developers
    Current code is a very alpha and kind of proof-of-concept demonstration.
@@ -59,4 +60,9 @@
 ** Setup config.yml
    #+BEGIN_SRC yaml
    REPOSITORY: "XXXXXX/XXXXXXXX.wiki" # Wiki's repository(organization/repository_name.wiki)
+   #+END_SRC
+
+** Usage
+   #+BEGIN_SRC shell-script
+     $ ~/src/search_wiki/bin/search_wiki keyword1 keyword2 keyword3 ...
    #+END_SRC
