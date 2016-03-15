@@ -1,0 +1,62 @@
+* search_wiki
+
+  search_wiki is a CLI tool to search github-wiki with keyword
+
+** Table of Contents
+ - [[#search_wiki][search_wiki]]
+     - [[#install-for-developers][Install for developers]]
+     - [[#setup-configyml][Setup config.yml]]
+
+** Install for developers
+   Current code is a very alpha and kind of proof-of-concept demonstration.
+   We recommend you not to install via usual gem-style procedure.
+
+   1) Install rbenv + ruby-build
+      (see [[https://github.com/rbenv/rbenv#basic-github-checkout]] for details)
+      #+BEGIN_SRC shell-script
+	$ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+	$ git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+	# Edit your shell dot files to add some path and environment variables.
+      #+END_SRC
+
+   2) Install Latest Ruby and bundler
+      #+BEGIN_SRC shell-script
+	# Install ruby 2.3.0
+	$ rbenv install 2.3.0
+
+	# Installation check
+	$ rbenv global 2.3.0
+	$ ruby -v # -> You will see: ruby 2.3.0...
+
+	# Install bundler for your new Ruby
+	$ gem install bundler
+	$ rbenv rehash
+
+	# Get back to your sytem default Ruby if you want
+	$ rbenv global system # say, /usr/bin/ruby
+	$ ruby -v
+      #+END_SRC
+
+   3) Clone search_wiki from github
+      #+BEGIN_SRC shell-script
+	$ git clone git@github.com:kobayashi1027/search_wiki.git ~/src/search_wiki
+      #+END_SRC
+
+   4) Install requied gem packages
+      #+BEGIN_SRC shell-script
+	$ cd ~/src/search_wiki
+	$ bundle install --path vendor/bundle
+      #+END_SRC
+
+   5) Setup config.yml
+      #+BEGIN_SRC shell-script
+	$ cd ~/src/search_wiki
+	$ mkdir -p ~/.config/search_wiki
+	$ cp examples/config.yml ~/.config/search_wiki/config.yml
+	$ vim ~/.config/search_wiki/config.yml # Detail is explained in next section
+      #+END_SRC
+
+** Setup config.yml
+   #+BEGIN_SRC yaml
+   REPOSITORY: "XXXXXX/XXXXXXXX.wiki" # Wiki's repository(organization/repository_name.wiki)
+   #+END_SRC
