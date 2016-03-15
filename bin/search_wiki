@@ -17,8 +17,9 @@ Bundler.require
 require "pp"
 
 ## main
-
+# Get wiki repository or update this
 config = SearchWiki::Config.new('~/.config/search_wiki/config.yml')
+url = "https://github.com/" + config['REPOSITORY'].gsub(/\./, "/") + "/"
 repo_name = config['REPOSITORY'].split('/').slice(-1)
 Dir.chdir(topdir + "/target_repo")
 if File.exist?(repo_name)
@@ -31,7 +32,23 @@ if File.exist?(repo_name)
 else
   begin
     `git clone git@github.com:#{config['REPOSITORY']}.git`
+    Dir.chdir(topdir + "/target_repo/#{repo_name}")
   rescue
     puts "error"
+  end
+end
+
+# Search wiki with given keywords
+searcher = "git grep -l --all-match"
+ARGV.each do |word|
+  searcher += " -e #{word}"
+end
+result = `#{searcher}`
+if result.empty?
+  puts "no match"
+else
+  # Convert filename to URL
+  result.split.each do |r|
+    puts url + r.split('/').slice(-1).gsub(/\.(.*)$/, "") if r.slice(0) != '_'
   end
 end
