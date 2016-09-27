@@ -1,9 +1,9 @@
-* search_wiki
+* github_wiki_searcher
 
-  search_wiki is a CLI tool to search github-wiki with keyword
+  github_wiki_searcher is a CLI tool to search github-wiki with keyword
 
 ** Table of Contents
- - [[#search_wiki][search_wiki]]
+ - [[#github_wiki_searcher][github_wiki_searcher]]
    - [[#install-for-developers][Install for developers]]
    - [[#setup-configyml][Setup config.yml]]
    - [[#usage][Usage]]
@@ -38,23 +38,23 @@
 	$ ruby -v
       #+END_SRC
 
-   3) Clone search_wiki from github
+   3) Clone github_wiki_searcher from github
       #+BEGIN_SRC shell-script
-	$ git clone git@github.com:kobayashi1027/search_wiki.git ~/src/search_wiki
+	$ git clone git@github.com:kobayashi1027/github_wiki_searcher.git ~/src/github_wiki_searcher
       #+END_SRC
 
    4) Install requied gem packages
       #+BEGIN_SRC shell-script
-	$ cd ~/src/search_wiki
+	$ cd ~/src/github_wiki_searcher
 	$ bundle install --path vendor/bundle
       #+END_SRC
 
    5) Setup config.yml
       #+BEGIN_SRC shell-script
-	$ cd ~/src/search_wiki
-	$ mkdir -p ~/.config/search_wiki
-	$ cp examples/config.yml ~/.config/search_wiki/config.yml
-	$ vim ~/.config/search_wiki/config.yml # Detail is explained in next section
+	$ cd ~/src/github_wiki_searcher
+	$ mkdir -p ~/.config/github_wiki_searcher
+	$ cp examples/config.yml ~/.config/github_wiki_searcher/config.yml
+	$ vim ~/.config/github_wiki_searcher/config.yml # Detail is explained in next section
       #+END_SRC
 
 ** Setup config.yml
@@ -64,5 +64,5 @@
 
 ** Usage
    #+BEGIN_SRC shell-script
-     $ ~/src/search_wiki/bin/search_wiki keyword1 keyword2 keyword3 ...
+     $ ~/src/github_wiki_searcher/bin/wiki_search keyword1 keyword2 keyword3 ...
    #+END_SRC

@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'search_wiki/version'
+require 'github_wiki_searcher/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "search_wiki"
-  spec.version       = SearchWiki::VERSION
+  spec.name          = "github_wiki_searcher"
+  spec.version       = GithubWikiSearcher::VERSION
   spec.authors       = ["kobayashi1027"]
   spec.email         = ["koba1027yashi@gmail.com"]
 

@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe SearchWiki do
+describe GithubWikiSearcher do
   it 'has a version number' do
-    expect(SearchWiki::VERSION).not_to be nil
+    expect(GithubWikiSearcher::VERSION).not_to be nil
   end
 
   it 'does something useful' do

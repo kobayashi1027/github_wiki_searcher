@@ -1,6 +1,6 @@
 require "yaml"
 
-module SearchWiki
+module GithubWikiSearcher
   class Config
     def initialize(config_file)
       config_string = File.open(File.expand_path(config_file)).read
@@ -12,4 +12,4 @@ module SearchWiki
     end
 
   end # class Config
-end # module SearchWiki
+end # module GithubWikiSearcher

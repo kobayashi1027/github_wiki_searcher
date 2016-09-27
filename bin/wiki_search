@@ -17,8 +17,8 @@ Bundler.require
 require "pp"
 
 ## main
-# Get wiki repository or update this
-config = SearchWiki::Config.new('~/.config/search_wiki/config.yml')
+# Get wiki repository or update it
+config = GithubWikiSearcher::Config.new('~/.config/github_wiki_searcher/config.yml')
 url = "https://github.com/" + config['REPOSITORY'].gsub(/\./, "/") + "/"
 repo_name = config['REPOSITORY'].split('/').slice(-1)
 Dir.chdir(topdir + "/target_repo")
